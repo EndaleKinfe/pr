@@ -12,7 +12,7 @@ namespace pr.Data
 
         public Database()
         {
-            _connectionString = @"Data Source=ENDALE-PC;Initial Catalog=enbla;Integrated Security=True";
+            _connectionString = @"Data Source=ENDALE-PC;Initial Catalog=enbla;Integrated Security=True; TrustServerCertificate=True";
         }
 
         public SqlConnection GetConnection()

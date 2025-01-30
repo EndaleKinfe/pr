@@ -1,0 +1,32 @@
+@model pr.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2 class="text-center">Sign Up</h2>
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Role</label>
+        <select asp-for="Role" class="form-control">
+            <option>Customer</option>
+            <option>Deliveryman</option>
+            <option>Restaurant</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Register</button>
+</form>
+<p>Already have an account? <a asp-action="Login">Login here</a></p>

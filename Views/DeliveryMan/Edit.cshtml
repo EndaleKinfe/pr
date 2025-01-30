@@ -1,0 +1,45 @@
+@model pr.Models.DeliveryMan
+
+<h2>Edit Delivery Man</h2>
+
+<form asp-action="Edit" method="POST">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label>First Name</label>
+        <input asp-for="FirstName" class="form-control" required />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input asp-for="LastName" class="form-control" required />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input asp-for="PhoneNumber" class="form-control" required />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Vehicle Type</label>
+        <input asp-for="VehicleType" class="form-control" required />
+        <span asp-validation-for="VehicleType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>License Number</label>
+        <input asp-for="LicenseNumber" class="form-control" required />
+        <span asp-validation-for="LicenseNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Is Available</label>
+        <input asp-for="IsAvailable" type="checkbox" class="form-control" required />
+        <span asp-validation-for="IsAvailable" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-warning mt-2">Update</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>

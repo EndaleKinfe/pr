@@ -23,7 +23,7 @@ namespace pr.Data
             using (var connection = _dbHelper.GetConnection())
             {
                 string query = "INSERT INTO DeliveryMan (FirstName, LastName, PhoneNumber, VehicleType, LicenseNumber, IsAvailable) " +
-                               "VALUES (@FullName, @PhoneNumber, @VehicleType, @LicenseNumber, @IsAvailable)";
+                               "VALUES (@FirstName, @LastName, @PhoneNumber, @VehicleType, @LicenseNumber, @IsAvailable)";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@FirstName", deliveryMan.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", deliveryMan.LastName);

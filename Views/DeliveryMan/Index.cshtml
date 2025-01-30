@@ -1,0 +1,35 @@
+@model IEnumerable<pr.Models.DeliveryMan>
+
+<h2>Delivery Men</h2>
+<a asp-action="Create" class="btn btn-success mb-2">Add New Delivery Man</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Vehicle Type</th>
+            <th>License Number</th>
+            <th>Available To Deliver</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var deliveryMan in Model)
+        {
+            <tr>
+                <td>@deliveryMan.FirstName</td>
+                <td>@deliveryMan.LastName</td>
+                <td>@deliveryMan.PhoneNumber</td>
+                <td>@deliveryMan.VehicleType</td>
+                <td>@deliveryMan.LicenseNumber</td>
+                <td>@deliveryMan.IsAvailable</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@deliveryMan.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@deliveryMan.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

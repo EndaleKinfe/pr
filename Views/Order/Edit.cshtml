@@ -1,0 +1,50 @@
+@model pr.Models.Order
+
+@{
+    ViewData["Title"] = "Edit Order";
+}
+
+<h2>Create Order</h2>
+
+<form asp-action="Edit" method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <label>Customer</label>
+        <select asp-for="CustomerId" asp-items="ViewBag.Customers" class="form-control"></select>
+        <span asp-validation-for="CustomerId" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label>Restaurant</label>
+        <select asp-for="RestaurantId" asp-items="ViewBag.Restaurants" class="form-control"></select>
+        <span asp-validation-for="RestaurantId" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label>Food Items</label>
+        <input asp-for="FoodId" class="form-control" />
+        <span asp-validation-for="FoodId" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label>Total Amount</label>
+        <input asp-for="TotalAmount" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="TotalAmount" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <select asp-for="Status" class="form-control">
+            <option>Pending</option>
+            <option>Preparing</option>
+            <option>Delivered</option>
+            <option>Canceled</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Place Order</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

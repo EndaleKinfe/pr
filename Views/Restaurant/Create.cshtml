@@ -1,0 +1,14 @@
+@model pr.Models.Restaurant
+
+<h2>Add New Restaurant</h2>
+
+<form asp-action="Create" method="POST">
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>
